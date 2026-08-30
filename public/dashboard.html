@@ -1,0 +1,112 @@
+<!--
+Author: Matthew Lang, T00749271
+Date: July 23, 2026
+Description: layout for user dashboard page.
+-->
+<!DOCTYPE html>
+<html ng-app="OpenDevHubApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!--AngularJS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <!--Angular application-->
+        <script src="js/app.js"></script>
+
+        <!--Dashboard controller-->
+        <script src="js/dashboardController.js"></script>
+    </head>
+
+    <body ng-controller="DashboardController">
+        <!--Navigation bar-->
+        <nav class="navbar">
+            <h2>OpenDevHub</h2>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>OpenDevHub</h1>
+
+            <p>Developer Dashboard</p>
+        </header>
+
+        <main class="container">
+            <div class="dashboard-card">
+                <h2>Welcome {{user.name}}</h2>
+
+                <!--Functionality buttons-->
+                <div class="dashboard-actions">
+                    <button class="primary-btn" ng-click="editProfile()">Edit Profile</button>
+
+                    <button class="primary-btn" ng-click="createProject()">Create Project</button>
+
+                    <button class="secondary-btn" ng-click="logout()">Logout</button>
+                </div>
+
+                <!--User info-->
+                <p><strong>Username:</strong> {{user.username}}</p>
+
+                <p><strong>Email:</strong> {{user.email}}</p>
+
+                <p><strong>Current Position:</strong> {{user.title}}</p>
+
+                <p><strong>Biography:</strong></p>
+                <p>
+                    <span ng-if="user.bio">{{user.bio}}</span>
+                    <span ng-if="!user.bio">Welcome to OpenDevHub! Add a biography to introduce yourself.</span>
+                </p>
+
+                <h3>Skills:</h3>
+
+                <div class="skill-list" ng-if="user.skills && user.skills.length">
+                    <span class="skill-tag" ng-repeat="skill in user.skills">
+                        {{skill}}
+                    </span>
+                </div>
+                <p ng-if="!user.skills || user.skills.length == 0">No skills listed yet.</p>
+
+                <hr>
+
+                <!--User summary-->
+                <h3>Developer Summary:</h3>
+
+                <p><strong>Total Projects:</strong> {{summary.totalProjects}}</p>
+                <p><strong>Public Projects:</strong> {{summary.publicProjects}}</p>
+
+                <hr>
+
+                <!--User projects-->
+                <h3>My Projects:</h3>
+
+                <div class="project-card" ng-repeat="project in projects">
+                    <h4>{{project.title}}</h4>
+
+                    <p>{{project.description}}</p>
+                    <div class="project-meta">
+                        <span><strong>Status:</strong>{{project.status}}</span>
+                        <span><strong>Visibility:</strong>{{project.visibility}}</span>
+                    </div>
+
+                    <p><strong>Technologies:</strong></p>
+                    <div class="tech-list">
+                        <span class="tech-tag" ng-repeat="tech in project.technologies">
+                            {{tech}}
+                        </span>
+                    </div>
+                </div>
+                <p ng-if="projects.length == 0">You have not added any projects yet.</p>
+
+            </div>
+            <br>
+        </main>
+    </body>
+</html>

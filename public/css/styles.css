@@ -1,0 +1,286 @@
+/*
+Author: Matthew Lang, T00749271
+Date: July 20, 2026
+Shared stylesheet for OpenDevHub website
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #d1d5db;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Login card */
+.login-card {
+    background: white;
+    width: 420px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
+}
+
+.login-card h2 {
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Forms */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Buttons */
+.button-group {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: #6b7280;
+    color: white;
+}
+.secondary-btn:hover {
+    background: #4b5563;
+}
+
+/* Status message */
+.status-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #c62828;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2937;
+    color: white;
+    padding: 15px 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #4f9cff;
+}
+
+.navbar a.active {
+    color: #2563eb;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th {
+    background: #1f2937;
+    color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+/* Statistics */
+.stats-grid {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    flex: 1;
+    background: #f4f7fb;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #d7dce2
+}
+
+.stat-box h3 {
+    font-size: 2.2rem;
+    color: #2f6fed;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Other layout styles */
+.dashboard-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    background: #fafafa;
+}
+
+.project-card h4 {
+    margin-top: 0;
+}
+
+hr {
+    margin: 25px 0;
+}
+
+/* Technologies and skills display */
+.tech-list, .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tech-tag, .skill-tag {
+    background: #e8f1ff;
+    color: #0056b3;
+    border: 1px solid #b9d4ff;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.dashboard-actions {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}
+
+.project-meta {
+    display: flex;
+    gap: 30px;
+    margin: 12px 0;
+    font-size: 0.95rem;
+}

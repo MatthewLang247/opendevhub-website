@@ -1,0 +1,70 @@
+<!--
+Author: Matthew Lang, T00749271
+Date: July 23, 2026
+Description: layout for public projects page.
+-->
+<!DOCTYPE html>
+<html ng-app="OpenDevHubApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projects</title>
+        
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!--AngularJS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <!--Angular application-->
+        <script src="js/app.js"></script>
+
+        <!--Projects controller-->
+        <script src="js/projectsController.js"></script>
+    </head>
+
+    <body ng-controller="ProjectsController">
+        <!--Navigation bar-->
+        <nav class="navbar">
+            <h2>OpenDevHub</h2>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Community Projects</h1>
+            <p>Browse public open-source projects.</p>
+        </header>
+
+        <main class="container">
+            <!--Community public projects list-->
+            <div class="project-card" ng-repeat="project in projects">
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+
+                <p>
+                    <strong>Owner:</strong>
+                    {{project.owner}}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    {{project.status}}
+                </p>
+
+                <p>
+                    <strong>Visibility:</strong>
+                    {{project.visibility}}
+                </p>
+
+                <div class="tech-list">
+                    <span class="tech-tag" ng-repeat="tech in project.technologies">
+                            {{tech}}
+                    </span>
+                </div>
+            </div>
+            <br>
+        </main>
+    </body>
+</html>
